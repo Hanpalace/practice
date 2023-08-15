@@ -1,0 +1,27 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: practice
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/crm?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+  data:
+    redis:
+      password: reins4730
+      port: 6379
+      host: 49.233.56.246
+      database: 1
+logging:
+  level:
+    com.han.practice: debug
+  pattern:
+    dateformat: mm:ss.SSS
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: com.han.practice.*.mapper
